@@ -13,10 +13,11 @@ has low specs. Also I only want part of page because
 webscraping + extracting only part of the page's source.
 
 So enter this. A super stripped html parser and renderer. 
-It's in a pretty good spot right now for what I need to I probably
+
+**It's in a pretty good spot right now for what I need to I probably
 won't be updating it much especially after implementing table things
 and adding documentation. If you come across a problem, feel free
-to make an issue or even a pr.
+to make an issue or even a pr.**
 
 Todo:
 - [ ] Parsing
