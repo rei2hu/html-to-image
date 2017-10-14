@@ -10,7 +10,4 @@ public class ThematicBreakNode extends BlockTagNode {
         super(tagName);
     }
 
-    public String toString() {
-        return "<ThematicBreakNode />";
-    }
 }

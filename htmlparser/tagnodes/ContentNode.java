@@ -36,11 +36,10 @@ public class ContentNode extends InlineTagNode {
             String replacement = m.group();
             int code;
             if (key.charAt(0) == '#') {
-                if(key.charAt(1) == 'x') {
+                if(key.charAt(1) == 'x')
                     code = Integer.parseInt(key.substring(2));
-                } else {
+                else
                     code = Integer.parseInt(key.substring(1));
-                }
                 if (!Double.isNaN(code))
                     replacement = new String(new int[]{code}, 0, 1);
             }

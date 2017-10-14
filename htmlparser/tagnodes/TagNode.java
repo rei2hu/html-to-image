@@ -65,13 +65,13 @@ public class TagNode {
         System.out.println(key + ": " + value);
         attributes.add(key, value);
     }
+
     String attributesString() {
         if (attributes == null) return "";
 
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
-        for (Attribute a: attributes) {
+        for (Attribute a: attributes)
             sb.append(" ").append(a.toString());
-        }
         return sb.toString();
     }
 

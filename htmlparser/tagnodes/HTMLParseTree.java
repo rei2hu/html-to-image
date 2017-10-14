@@ -47,20 +47,17 @@ public class HTMLParseTree {
             s.append(" ");
         }
         s.append(getContents(node, false)).append("\n");
-        if (node.getLeft() != null) {
+        if (node.getLeft() != null)
             traverse(node.getLeft(), spaces + 4, s);
-        }
         if (!(node instanceof ContentNode)) {
 
-            for (int i = 0; i < spaces; i++) {
+            for (int i = 0; i < spaces; i++)
                 s.append(" ");
-            }
-            
+
             s.append(getContents(node, true)).append("\n");
         }
-        if (node.getRight() != null) {
+        if (node.getRight() != null)
             traverse(node.getRight(), spaces, s);
-        }
     }
 
     /**
@@ -70,9 +67,8 @@ public class HTMLParseTree {
      * @return I really don't know do I use this anywhere?
      */
     private String getContents(TagNode node, boolean closing) {
-        if (node instanceof ContentNode) {
-            return ((ContentNode) node).toString();
-        }
+        if (node instanceof ContentNode)
+            return node.toString();
         String s = "<";
         if (closing) s += "/";
         s += node.getClass().getName() + ">";

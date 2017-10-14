@@ -50,9 +50,8 @@ public class Attributes implements java.lang.Iterable<Attribute> {
                     else
                         add(styleValue[0], styleValue[1]);
                 }
-            } else {
+            } else
                 add(keyvalue[0], keyvalue[1]);
-            }
         }
     }
 
@@ -70,9 +69,8 @@ public class Attributes implements java.lang.Iterable<Attribute> {
      */
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        for (Attribute a: attributes.values()) {
+        for (Attribute a: attributes.values())
             sb.append(" ").append(a.toString());
-        }
         return sb.toString();
     }
 

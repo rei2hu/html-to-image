@@ -77,12 +77,10 @@ class HTMLScanner {
                             t = new Content(temp);
                         }
                         sb.setLength(0);
-                        if (openTag) {
+                        if (openTag)
                             sb.append((char) c);
-                        }
-                        if (t != null) {
+                        if (t != null)
                             return t;
-                        }
                     }
                     break;
                 case '>':

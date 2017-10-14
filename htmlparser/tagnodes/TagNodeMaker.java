@@ -6,16 +6,12 @@ package htmlparser.tagnodes;
 
 public class TagNodeMaker {
 
-    public TagNodeMaker() {
-
-    }
-
     /**
      * Helper method
      * @param nodeType The string representing the tag name
      * @return A node
      */
-    public TagNode makeNode(String nodeType) {
+    public static TagNode makeNode(String nodeType) {
         return makeNode(nodeType, "");
     }
 
@@ -25,7 +21,7 @@ public class TagNodeMaker {
      * @param content The content of the node
      * @return
      */
-    public TagNode makeNode(String nodeType, String content) {
+    public static TagNode makeNode(String nodeType, String content) {
         switch(nodeType) {
             case "p":
             case "div": // lol

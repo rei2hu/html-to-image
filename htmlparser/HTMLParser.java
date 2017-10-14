@@ -17,7 +17,6 @@ import htmlparser.tagnodes.TagNodeMaker;
 public class HTMLParser {
 
     private HTMLScanner sc;
-    private TagNodeMaker tnm;
 
     /**
      * The constructor
@@ -25,7 +24,6 @@ public class HTMLParser {
      */
     public HTMLParser(String s) {
         sc = new HTMLScanner(s);
-        tnm = new TagNodeMaker();
     }
 
     /**
@@ -72,7 +70,7 @@ public class HTMLParser {
 
             if (token instanceof OpeningTag) {
                 tag = (Tag) token;
-                node = tnm.makeNode(tag.getTagName());
+                node = TagNodeMaker.makeNode(tag.getTagName());
                 node.setAttributes(tag.getAttributes());
                 if (token.equals(unmatchedTags.peek())) {
                     // System.out.println("An unmatched tag was found " + unmatchedTags.remove());
@@ -92,11 +90,11 @@ public class HTMLParser {
                 continue;
             } else if (token instanceof StandaloneTag) {
                 Tag tmp = (Tag) token;
-                node = tnm.makeNode(tmp.getTagName());
+                node = TagNodeMaker.makeNode(tmp.getTagName());
                 node.setAttributes(tmp.getAttributes());
                 temp = false;
             } else {
-                node = tnm.makeNode("content", token.toString());
+                node = TagNodeMaker.makeNode("content", token.toString());
                 temp = false;
             }
             if (!stack.isEmpty()) {
@@ -132,11 +130,8 @@ public class HTMLParser {
                     queue.add(s);
                     s = stack.pop();
                 }
-                if (!s.equals(t)) {
+                if (!s.equals(t))
                     throw new Exception(String.format("Could not find LinkNode matching opening tag for %s", t));
-                }
-            } else if (t instanceof StandaloneTag) {
-                // no need to match
             } else {
                 // no need to match
             }
